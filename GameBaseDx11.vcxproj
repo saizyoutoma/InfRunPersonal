@@ -131,6 +131,7 @@
     <ClCompile Include="AnimePlane.cpp" />
     <ClCompile Include="Axis.cpp" />
     <ClCompile Include="CDTimer.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
     <ClCompile Include="Engine\BillBoard.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Axis.h" />
     <ClInclude Include="CDTimer.h" />
     <ClInclude Include="CEaseFunction.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ResultScene.h" />
     <ClInclude Include="Engine\Audio.h" />
     <ClInclude Include="Engine\BillBoard.h" />
