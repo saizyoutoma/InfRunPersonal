@@ -21,6 +21,8 @@ class wanwanGenerator :
 	int GenerateNum(int _n);
 	vector<Wanwan*> wanList;
 	float speed_;
+	float time_;
+	float spawnTimer_;
 public:
 	void Generate();
 	void SetSpeed(float _speed);

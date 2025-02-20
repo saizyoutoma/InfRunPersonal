@@ -116,17 +116,9 @@
     <ClCompile Include="TestScene.cpp">
       <Filter>04SCENES</Filter>
     </ClCompile>
-    <ClCompile Include="UIImage.cpp">
-      <Filter>03OBJECTS</Filter>
-    </ClCompile>
     <ClCompile Include="Wanwan.cpp">
       <Filter>03OBJECTS</Filter>
     </ClCompile>
-    <ClCompile Include="wanwanGenerator.cpp">
-      <Filter>03OBJECTS</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimePlane.cpp" />
-    <ClCompile Include="Axis.cpp" />
     <ClCompile Include="TitleScene.cpp">
       <Filter>04SCENES</Filter>
     </ClCompile>
@@ -134,6 +126,9 @@
       <Filter>04SCENES</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="wanwanGenerator.cpp">
+      <Filter>03OBJECTS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -217,20 +212,12 @@
     <ClInclude Include="TestScene.h">
       <Filter>04SCENES</Filter>
     </ClInclude>
-    <ClInclude Include="UIImage.h">
-      <Filter>03OBJECTS</Filter>
-    </ClInclude>
     <ClInclude Include="Wanwan.h">
-      <Filter>03OBJECTS</Filter>
-    </ClInclude>
-    <ClInclude Include="wanwanGenerator.h">
       <Filter>03OBJECTS</Filter>
     </ClInclude>
     <ClInclude Include="CEaseFunction.h">
       <Filter>05Util</Filter>
     </ClInclude>
-    <ClInclude Include="AnimePlane.h" />
-    <ClInclude Include="Axis.h" />
     <ClInclude Include="TitleScene.h">
       <Filter>04SCENES</Filter>
     </ClInclude>
@@ -238,6 +225,9 @@
       <Filter>04SCENES</Filter>
     </ClInclude>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="wanwanGenerator.h">
+      <Filter>03OBJECTS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

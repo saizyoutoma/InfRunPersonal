@@ -4,9 +4,9 @@
 //IDLE 0-147
 //RUN 148-186
 
-enum OSS
+enum PSTATE
 {
-	IDLE, RUN, DEFEET, TRAVERSAL, MAXOSS
+	IDLE, MOVING, ATTACK, DEATH,TRAVERSAL, MAXOSS
 };
 
 class CDTimer;
@@ -22,7 +22,7 @@ namespace
 		{0,0,1},{-1,0,0},{0,0,-1},{1,0,0},{0,0,0}
 	};
 	float MOVESPEED = 0.01f;
-	std::pair<int, int> OSFRAMES[MAXOSS]
+	std::pair<int, int> PFRAMES[MAXOSS]
 	{
 		{0,147},{148,186},{148,186}, {0,147}
 	};
@@ -31,7 +31,7 @@ namespace
 	const float TRAVERSAL_TIME{ 0.5f };
 	const float TR_ROTANGLE{ 75 };
 	const float ROTANGLE[5]{ 0, -90, 180, 90, 0 };
-	enum OPOS_STATE{ OLEFT, OCENTER, ORIGHT, MAXPOS};
+	enum PPOS_STATE{ OLEFT, OCENTER, ORIGHT, MAXPOS};
 	enum INPUT_STATE{ILEFT,IRIGHT, NONE, IMAX};
 }
 
@@ -50,13 +50,13 @@ class Ossan : public GameObject
 	int hmodel_;
 	void GetInputData();
 	MOVEDIR moveDir_;
-	OSS ossanState_;
-	OSS oldState_;
+	PSTATE PlayerState_;
+	PSTATE oldState_;
 
-	OPOS_STATE posState_;
-	OPOS_STATE posSetter(INPUT_STATE inputDir);
+	PPOS_STATE posState_;
+	PPOS_STATE posSetter(INPUT_STATE inputDir);
 
-	bool isTraverasal() { return(ossanState_ == TRAVERSAL); }
+	bool isTraverasal() { return(PlayerState_ == TRAVERSAL); }
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
@@ -75,9 +75,10 @@ public:
 	void Release() override;
 	void SetIdleState();;
 	void SetRunState();
+	void SetAttackState();
 	void SetDefeetState();
 	void SetTraversalState();
-	OSS GetState() { return ossanState_; }
+	PSTATE GetState() { return PlayerState_; }
 public:
 	XMVECTOR GetMoveVec();
 	CDTimer* cdtimer_;

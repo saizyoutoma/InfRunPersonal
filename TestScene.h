@@ -1,8 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "CDTimer.h"
-#include "wanwanGenerator.h"
-#include "UIImage.h"
+#include "WanwanGenerator.h"
 
 namespace
 {
@@ -27,7 +26,6 @@ class TestScene : public GameObject
 	CDTimer*timer_;
 	wanwanGenerator* wang;
 	PLAYSTATE PSTATE;
-	UIImage* uiImage_;
 public:
 	void PlayUpdate();
 	void ReadyUpdate();

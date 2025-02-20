@@ -23,10 +23,8 @@ void wanwanGenerator::SetSpeed(float _speed)
 	speed_ = _speed;
 }
 
-
-
 wanwanGenerator::wanwanGenerator(GameObject* parent)
-	:GameObject(parent, "WG"), isGenerated_(false), oldLane_(1), speed_(0)
+	:GameObject(parent, "WG"), isGenerated_(false), oldLane_(1)
 {
 	spaceLane_ = rand() % 3;
 }
@@ -41,24 +39,25 @@ void wanwanGenerator::Initialize()
 void wanwanGenerator::Update()
 {
 	if (!isGenerated_) {
-		Wanwan* w[2]{ nullptr, nullptr };
-		for (int i = 0; i < 2; i++)
-			w[i] = Instantiate<Wanwan>(this->GetParent());
-		oldLane_ = spaceLane_;
-		spaceLane_ = GenerateNum(oldLane_);
-		
-		w[0]->SetPosition(WAN_POS[GENPAIR[spaceLane_].first]);
-		w[1]->SetPosition(WAN_POS[GENPAIR[spaceLane_].second]);
-		
-		wanList.push_back(w[0]);
-		wanList.push_back(w[1]);
+		if (wanList.size() < 9) {
+			Wanwan* w = Instantiate<Wanwan>(this->GetParent());
 
-		isGenerated_ = true;
+			oldLane_ = spaceLane_;
+			spaceLane_ = GenerateNum(oldLane_);
+
+			w->SetPosition(WAN_POS[spaceLane_]);
+
+			// ¶¬‚³‚ê‚½1‘Ì‚ðwanList‚É’Ç‰Á
+			wanList.push_back(w);
+
+			isGenerated_ = true;
+		}
+		time_ = 0.0f;
 	}
 
 	for (auto& theI : wanList)
 	{
-		XMVECTOR mv{ 0,0,-1 };
+		XMVECTOR mv{ 0,0,-0.5 };
 		XMFLOAT3 fl3tmp = theI->GetPosition();
 		XMVECTOR tmp = XMLoadFloat3(&fl3tmp);
 		tmp = tmp + speed_ * mv;

@@ -128,8 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AnimePlane.cpp" />
-    <ClCompile Include="Axis.cpp" />
     <ClCompile Include="CDTimer.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResultScene.cpp" />
@@ -160,13 +158,10 @@
     <ClCompile Include="Ossan.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="UIImage.cpp" />
     <ClCompile Include="Wanwan.cpp" />
     <ClCompile Include="wanwanGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnimePlane.h" />
-    <ClInclude Include="Axis.h" />
     <ClInclude Include="CDTimer.h" />
     <ClInclude Include="CEaseFunction.h" />
     <ClInclude Include="Player.h" />
@@ -198,7 +193,6 @@
     <ClInclude Include="Ossan.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="UIImage.h" />
     <ClInclude Include="Wanwan.h" />
     <ClInclude Include="wanwanGenerator.h" />
   </ItemGroup>
